@@ -175,11 +175,7 @@ BO_ 804 CRUISE: 8 PCM
 BO_ 829 LKAS_HUD: 5 ADAS
  SG_ CAM_TEMP_HIGH : 7|1@0+ (1,0) [0|255] "" BDY
  SG_ SET_ME_X41 : 6|7@0+ (1,0) [0|127] "" BDY
-<<<<<<< HEAD
- SG_ BOH : 6|7@0+ (1,0) [0|127] "" BDY
-=======
  SG_ BOH : 23|2@0+ (1,0) [0|4] "" BDY
->>>>>>> f01c7acd65eeb165dd9870a180c1552077bc0ea4
  SG_ DASHED_LANES : 14|1@0+ (1,0) [0|1] "" BDY
  SG_ DTC : 13|1@0+ (1,0) [0|1] "" BDY
  SG_ LKAS_PROBLEM : 12|1@0+ (1,0) [0|1] "" BDY
@@ -187,10 +183,6 @@ BO_ 829 LKAS_HUD: 5 ADAS
  SG_ SOLID_LANES : 10|1@0+ (1,0) [0|1] "" BDY
  SG_ LDW_RIGHT : 9|1@0+ (1,0) [0|1] "" BDY
  SG_ STEERING_REQUIRED : 8|1@0+ (1,0) [0|1] "" BDY
-<<<<<<< HEAD
- SG_ BOH2 : 23|2@0+ (1,0) [0|4] "" BDY
-=======
->>>>>>> f01c7acd65eeb165dd9870a180c1552077bc0ea4
  SG_ LDW_PROBLEM : 21|1@0+ (1,0) [0|1] "" BDY
  SG_ BEEP : 17|2@0+ (1,0) [0|1] "" BDY
  SG_ LDW_ON : 28|1@0+ (1,0) [0|1] "" BDY
@@ -229,18 +221,11 @@ BO_ 401 GEARBOX: 8 PCM
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" EON
 
 BO_ 404 STEERING_CONTROL: 4 EON
-<<<<<<< HEAD
-=======
  SG_ STEER_TORQUE : 7|16@0- (-1,0) [-32767|32767] "" EPS
->>>>>>> f01c7acd65eeb165dd9870a180c1552077bc0ea4
  SG_ SET_ME_X00 : 22|7@0+ (1,0) [0|127] "" EPS
  SG_ STEER_TORQUE_REQUEST : 23|1@0+ (1,0) [0|1] "" EPS
  SG_ COUNTER : 29|2@0+ (1,0) [0|15] "" EPS
  SG_ CHECKSUM : 27|4@0+ (1,0) [0|3] "" EPS
-<<<<<<< HEAD
- SG_ STEER_TORQUE : 7|16@0- (-1,0) [-32767|32767] "" EPS
-=======
->>>>>>> f01c7acd65eeb165dd9870a180c1552077bc0ea4
 
 BO_ 420 VSA_STATUS: 8 VSA
  SG_ USER_BRAKE : 7|16@0+ (0.015625,-1.609375) [0|1000] "" EON
