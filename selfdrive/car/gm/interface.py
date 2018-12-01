@@ -19,10 +19,6 @@ class CanBus(object):
     self.chassis = 2
     self.sw_gmlan = 3
 
-# 384 = "ASCMLKASteeringCmd"
-# 715 = "ASCMGasRegenCmd"
-CONTROL_MSGS = [384, 715]
-
 class CarInterface(object):
   def __init__(self, CP, sendcan=None):
     self.CP = CP
