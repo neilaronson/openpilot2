@@ -118,11 +118,11 @@ class CarController(object):
         hud_car = 1
     else:
       hud_car = 0
-      
+
     # For lateral control-only, send chimes as a beep since we don't send 0x1fa
     if CS.CP.radarOffCan:
       snd_beep = snd_beep if snd_beep is not 0 else snd_chime
-      
+
     # Do not send audible alert when steering is disabled or blinkers on
     if not CS.lkMode or CS.left_blinker_on or CS.right_blinker_on:
       snd_chime = 0
@@ -153,12 +153,12 @@ class CarController(object):
 
     # Send CAN commands.
     can_sends = []
-    
+
     # Send steering command.
     idx = frame % 4
     can_sends.append(hondacan.create_steering_control(self.packer, apply_steer,
       lkas_active, CS.CP.carFingerprint, idx))
-   
+
     # Send dashboard UI commands.
     if (frame % 10) == 0:
       idx = (frame/10) % 4
@@ -175,11 +175,9 @@ class CarController(object):
       # Send gas and brake commands.
       if (frame % 2) == 0:
         idx = (frame / 2) % 4
-        pump_on, self.last_pump_ts = brake_pump_hysteresys(apply_brake, self.apply_brake_last, self.last_pump_ts)
-        can_sends.append(hondacan.create_brake_command(self.packer, apply_brake, pump_on,
-          pcm_override, pcm_cancel_cmd, hud.chime, hud.fcw, idx))
-        self.apply_brake_last = apply_brake
-
+        can_sends.extend(
+          hondacan.create_brake_command(self.packer, apply_brake, pcm_override,
+                                      pcm_cancel_cmd, hud.chime, hud.fcw, CS.CP.carFingerprint, idx))
         if CS.CP.enableGasInterceptor:
           # send exactly zero if apply_gas is zero. Interceptor will send the max between read value and apply_gas.
           # This prevents unexpected pedal range rescaling
